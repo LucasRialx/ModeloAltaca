@@ -6,12 +6,12 @@ body {
 }
 
 .navbar {
-    position: sticky; /* Torna o menu fixo quando rolar */
+    position: sticky;
     top: 0;
     background-color: #333;
     color: #fff;
     width: 100%;
-    z-index: 1000; /* Garante que o menu fique acima de outros conteúdos */
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,78 +42,217 @@ body {
 .logo-section {
     text-align: center;
     padding: 50px 20px;
-    background-image: url('container_principal.jpg'); /* Imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
+    background-image: url('container_principal.jpg');
+    background-size: cover;
+    background-position: center;
     position: relative;
 }
 
-.logo-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade */
-    z-index: 0;
-}
-
 .client-logo {
-    width: 700px;   /* Defina a largura específica */
-    height: 150px;  /* Defina a altura específica */
-    object-fit: cover; /* Mantém a proporção da imagem dentro das dimensões definidas */
-    border-radius: 25px; /* Arredonda as bordas da imagem */
-    position: relative; /* Necessário para sobrepor o pseudo-elemento */
-    z-index: 1; /* Garante que a logo fique acima da imagem de fundo */
+    width: 700px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
 }
 
-.welcome, .services, .clients, .contacts, .footer {
+.welcome {
+    text-align: center;
+    color: #fff;
+    background-image: url('welcome.png');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+}
+
+.welcome-text-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    display: inline-block;
+    max-width: 800px;
+    text-align: left;
+    border-radius: 25px; /* Adiciona o arredondamento */
+}
+
+.services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.service-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.clients {
     padding: 60px 20px;
     text-align: center;
 }
 
-.fixed-size-image {
-    max-width: 200px;
-    height: auto;
-}
-
-.services .service-item {
-    display: inline-block;
-    width: 30%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.clients .client-logos img {
+.feedback-image {
     max-width: 150px;
+    height: auto;
     margin: 10px;
 }
 
-.contacts .contact-item {
-    margin-bottom: 30px;
+.contacts {
+    padding: 60px 20px;
 }
 
-.contacts a {
-    color: #081f1b;
+.contact-title {
+    text-align: center;
+}
+
+/* Adiciona uma caixa estilizada aos links de contato */
+.contacts-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contact-list {
+    width: 30%; /* Ajusta a largura da caixinha */
+}
+
+.contact-list h4 {
+    text-align: center; /* Centraliza o título dentro da caixinha */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.contact-list p {
+    text-align: center; /* Centraliza o texto dos links dentro da caixinha */
+    margin: 10px 0;
+}
+
+.contact-list a {
+    display: inline-block; /* Ajusta a largura da caixa ao conteúdo */
+    padding: 8px; /* Reduz o padding */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%; /* Faz a caixa ocupar toda a largura disponível */
 }
 
-.contacts a:hover {
-    text-decoration: underline;
+.contact-list a:hover {
+    background-color: #ddd;
+    color: #000;
 }
+
+.map-container {
+    width: 40%; /* Mantém a largura original do mapa */
+    height: 300px; /* Mantém a altura original do mapa */
+    margin-left: 20px; /* Adiciona margem à esquerda do mapa para afastá-lo das caixinhas */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
 
 .footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 .footer p {
     margin: 0;
     font-size: 14px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .client-logo {
+        width: 100%;
+        height: auto;
+    }
+
+    .welcome {
+        padding: 30px 10px;
+    }
+
+    .welcome-text-box {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+    }
+
+    .contacts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-list,
+    .map-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+    .client-logo {
+        width: 50%;
+    }
+
+    .service-item {
+        width: 45%;
+    }
+
+    .map-container {
+        width: 50%;
+    }
 }
