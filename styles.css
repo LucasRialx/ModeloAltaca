@@ -223,7 +223,8 @@ body {
     }
 
     .service-item {
-        width: 80%;
+        width: 90%; /* Aumenta a largura para usar mais o espaço disponível */
+        margin-bottom: 20px; /* Adiciona um espaçamento entre as caixinhas */
     }
 
     .contacts-container {
