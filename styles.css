@@ -1,0 +1,301 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.logo-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url('static/container_principal.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.client-logo {
+    width: 700px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome {
+    text-align: center;
+    color: #fff;
+    background-image: url('static/welcome.png');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+}
+
+.welcome-text-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    display: inline-block;
+    max-width: 800px;
+    text-align: left;
+    border-radius: 25px; /* Ad iciona o arredondamento */
+}
+
+.services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f7;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.service-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.clients {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.feedback-image {
+    max-width: 150px;
+    height: auto;
+    margin: 10px;
+}
+
+.contacts {
+    padding: 60px 20px;
+}
+
+.contact-title {
+    text-align: center;
+}
+
+.contacts-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contact-list {
+    width: 30%; /* Ajusta a largura da caixinha */
+}
+
+.contact-list h4 {
+    text-align: center; /* Centraliza o título dentro da caixinha */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.contact-list p {
+    text-align: center; /* Centraliza o texto dos links dentro da caixinha */
+    margin: 10px 0;
+}
+
+.contact-list a {
+    display: inline-block; /* Ajusta a largura da caixa ao conteúdo */
+    padding: 8px; /* Reduz o padding */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%; /* Faz a caixa ocupar toda a largura disponível */
+}
+
+.contact-list a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.map-container {
+    width: 40%; /* Mantém a largura original do mapa */
+    height: 300px; /* Mantém a altura original do mapa */
+    margin-left: 20px; /* Adiciona margem à esquerda do mapa para afastá-lo das caixinhas */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 700px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.show {
+        display: block;
+    }
+
+    .client-logo {
+        width: 100%;
+        height: auto;
+    }
+
+    .welcome {
+        padding: 30px 10px;
+    }
+
+    .welcome-text-box {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 90%; /* Aumenta a largura para usar mais o espaço disponível */
+        margin-bottom: 20px; /* Adiciona um espaçamento entre as caixinhas */
+    }
+
+    .contacts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-list,
+    .map-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+    .client-logo {
+        width: 50%;
+    }
+
+    .service-item {
+        width: 45%;
+    }
+
+    .map-container {
+        width: 50%;
+    }
+}
